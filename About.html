@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "poppins", sans-serif;
+      }
+
+      .hero {
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(
+            rgba(12, 3, 51, 0.3),
+            rgba(12, 3, 51, 0.3)
+          ),
+          url("image/p5.jpg");
+        background-size: cover; /* Ensure the background image covers the entire section */
+        background-position: center; /* Center the background image */
+        position: relative;
+        padding: 0 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .content {
+        text-align: center;
+      }
+
+      .content h1 {
+        font-size: 6vw;
+        color: #fff;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .content h2 {
+        font-size: 2vw;
+        color: #fff;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .content h1:hover {
+        -webkit-text-stroke: 1px #fff;
+        color: transparent;
+      }
+
+      .content a {
+        text-decoration: none;
+        color: #fff;
+        font-size: 2vw;
+        display: inline-block;
+        border: 1px solid #fff;
+        padding: 10px 20px;
+        border-radius: 20px;
+        margin-top: 10px;
+      }
+
+      .who-we-are {
+        background-color: #125f4c;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+      }
+
+      .who-we-are h1,
+      .who-we-are h2 {
+        color: #ffffff;
+      }
+
+      .who-we-are .left-panel h1 {
+        font-size: 6vw;
+      }
+
+      .who-we-are .left-panel h2 {
+        padding-top: 5dvh;
+        font-size: 2.5dvh;
+        width: 80%;
+        font-weight: 400;
+        color: #ffffff;
+      }
+
+      .left-panel,
+      .right-panel {
+        flex: 1;
+        padding: 20px;
+        padding-left: 5dvh;
+        padding-right: 5dvh;
+        padding-top: 10dvh;
+      }
+
+      .who-we-are .text-block {
+        border-top: #ffffff solid 1px;
+      }
+
+      .who-we-are .right-panel h1 {
+        font-size: 5dvh;
+        padding-top: 2dvh;
+      }
+
+      .who-we-are .right-panel h2 {
+        padding-top: 2dvh;
+        font-size: 2.5dvh;
+        padding-bottom: 2dvh;
+        font-weight: 400;
+        color: #ffffff;
+      }
+
+      /* style for navbar */
+      .nav {
+        background-color: none;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        text-align: center;
+        /* Center the content horizontally */
+        z-index: 1000;
+        /* Ensure the navbar appears above other elements */
+      }
+
+      .nav ul {
+        margin: 0 auto;
+        /* Center the list horizontally */
+        padding: 0;
+        list-style-type: none;
+        display: inline-block;
+        /* Ensure the list items stay in a single line */
+      }
+
+      .nav li {
+        float: right;
+      }
+
+      .nav li a {
+        display: block;
+        color: blanchedalmond;
+        /* Text color */
+        text-align: center;
+        padding: 52px 16px;
+        text-decoration: none;
+        font-size: 20px;
+
+        /* Font size */
+        font-family: "poppins", sans-serif;
+        /* Font family */
+        /* font-weight: bold; */
+      }
+
+      .nav li a:hover {
+        color: rgba(181, 197, 240, 0.836);
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+    </style>
+
+    <title>About</title>
+  </head>
+  <div class="nav">
+    <ul>
+      <li><a href="contact.html">Contact me</a></li>
+      <li><a href="skill.html">Interest and Skills</a></li>
+      <!-- <li><a href="education.html">Education</a></li> -->
+      <li><a href="project.html">Projects</a></li>
+      <li><a href="About.html">About</a></li>
+      <li><a href="home.html">Home</a></li>
+    </ul>
+  </div>
+  <body>
+    <div class="hero about">
+      <div class="content">
+        <h1 style="font-size: 90px">About Me</h1>
+        <h2 style="font-size: 25px">
+          As a CSE student from Bangladesh, I'm deeply passionate about data
+          science and proficient in HTML, CSS, JavaScript, and frontend design.
+          With a dedication to leveraging technology for real-world solutions, I
+          strive to innovate and contribute meaningfully to the field.
+        </h2>
+      </div>
+    </div>
+
+    <!-- Who We Are -->
+    <div class="who-we-are">
+      <div class="left-panel">
+        <h1 style="font-size: 55px">Who I am</h1>
+        <h2>
+          As a dedicated CSE student from Bangladesh, I am driven by a passion
+          for technology and a commitment to mastering data science alongside
+          frontend design.
+        </h2>
+        <h1 style="font-size: 45px; margin-top: 25px">Education</h1>
+        <h2>
+          B.Sc in Computer Science and Engineering
+          <p1>
+            <br />
+            East West University, Bangladesh
+          </p1>
+        </h2>
+
+        <h2>
+          Higher Secondary School Certificate(HSC)
+          <p1> <br />Rajshahi Govt. City Collage </p1>
+        </h2>
+
+        <h2>
+          Secondary School Certificate(SSC)
+          <p1> <br />Chaitanapur High School </p1>
+        </h2>
+
+        <h2>
+          Junior School Certificate(JSC)
+          <p1> <br />Chaitanapur High School </p1>
+        </h2>
+      </div>
+
+      <div class="right-panel">
+        <div class="text-block">
+          <h1>Problem Solving</h1>
+          <h2>
+            With a knack for analytical thinking and a methodical approach, I
+            tackle challenges head-on, breaking them down into manageable parts
+            to devise effective solutions. Whether it's debugging code or
+            strategizing project milestones, I thrive in problem-solving
+            scenarios, leveraging creativity and critical thinking to overcome
+            obstacles.
+          </h2>
+        </div>
+        <div class="text-block">
+          <h1>Teamwork</h1>
+          <h2>
+            Recognizing the value of collaboration, I actively engage with team
+            members, fostering an inclusive environment where diverse
+            perspectives are welcomed. Through effective communication and a
+            willingness to listen, I contribute ideas, support colleagues, and
+            adapt to different working styles, ultimately driving the team
+            towards shared goals.
+          </h2>
+        </div>
+        <div class="text-block">
+          <h1>Willingness to Try New Things</h1>
+          <h2>
+            Embracing curiosity and a growth mindset, I eagerly explore new
+            technologies, methodologies, and approaches. Whether it's learning a
+            new programming language or experimenting with innovative tools, I
+            see every challenge as an opportunity for growth. This openness to
+            new experiences not only expands my skill set but also fuels my
+            passion for continuous learning and innovation.
+          </h2>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

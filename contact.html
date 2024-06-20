@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "poppins", sans-serif;
+      }
+
+      .hero {
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(
+            rgba(12, 3, 51, 0.3),
+            rgba(12, 3, 51, 0.3)
+          ),
+          url("image/c.jpg");
+        background-size: cover; /* Ensure the background image covers the entire section */
+        background-position: center; /* Center the background image */
+        position: relative;
+        padding: 0 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .content {
+        text-align: center;
+      }
+
+      .content h1 {
+        font-size: 6vw;
+        color: #fff;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .content h2 {
+        font-size: 2vw;
+        color: #fff;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .content h1:hover {
+        -webkit-text-stroke: 1px #fff;
+        color: transparent;
+      }
+
+      /* style for navbar */
+      .nav {
+        background-color: none;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        text-align: center;
+        /* Center the content horizontally */
+        z-index: 1000;
+        /* Ensure the navbar appears above other elements */
+      }
+
+      .nav ul {
+        margin: 0 auto;
+        /* Center the list horizontally */
+        padding: 0;
+        list-style-type: none;
+        display: inline-block;
+        /* Ensure the list items stay in a single line */
+      }
+
+      .nav li {
+        float: right;
+      }
+
+      .nav li a {
+        display: block;
+        color: blanchedalmond;
+        /* Text color */
+        text-align: center;
+        padding: 52px 16px;
+        text-decoration: none;
+        font-size: 20px;
+
+        /* Font size */
+        font-family: "poppins", sans-serif;
+        /* Font family */
+        /* font-weight: bold; */
+      }
+
+      .nav li a:hover {
+        color: rgba(181, 197, 240, 0.836);
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+      /* social media */
+      @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+
+      a,
+      a:hover {
+        text-decoration: none;
+      }
+
+      .socialbtns,
+      .socialbtns ul,
+      .socialbtns li {
+        margin: 0;
+        padding: 5px;
+      }
+
+      .socialbtns li {
+        list-style: none outside none;
+        display: inline-block;
+      }
+
+      .socialbtns .fa {
+        width: 40px;
+        height: 40px;
+        color: #3341c8;
+        background-color: whitesmoke;
+        /* border: 1px solid #000; */
+        padding-top: 12px;
+        border-radius: 22px;
+        -moz-border-radius: 22px;
+        -webkit-border-radius: 22px;
+        -o-border-radius: 22px;
+      }
+
+      .socialbtns .fa:hover {
+        color: #ffffff;
+        background-color: #000;
+        border: 1px solid #000;
+      }
+      /* footer */
+      .new_footer_area {
+        background: #fbfbfd;
+      }
+
+      .new_footer_top {
+        padding: 100px 0px 100px;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      .new_footer_top .footer_bg {
+        position: absolute;
+        bottom: 0;
+        background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigB8iI5tb8WSVBuVUGc9UjjB8O0708X7Fdic_4O1LT4CmLHoiwhanLXiRhe82yw0R7LgACQ2IhZaTY0hhmGi0gYp_Ynb49CVzfmXtYHUVKgXXpWvJ_oYT8cB4vzsnJLe3iCwuzj-w6PeYq_JaHmy_CoGoa6nw0FBo-2xLdOPvsLTh_fmYH2xhkaZ-OGQ/s16000/footer_bg.png")
+          no-repeat scroll center 0;
+        width: 100%;
+        height: 266px;
+      }
+
+      .new_footer_top .footer_bg .footer_bg_one {
+        background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEia0PYPxwT5ifToyP3SNZeQWfJEWrUENYA5IXM6sN5vLwAKvaJS1pQVu8mOFFUa_ET4JuHNTFAxKURFerJYHDUWXLXl1vDofYXuij45JZelYOjEFoCOn7E6Vxu0fwV7ACPzArcno1rYuVxGB7JY6G7__e4_KZW4lTYIaHSLVaVLzklZBLZnQw047oq5-Q/s16000/volks.gif")
+          no-repeat center center;
+        width: 330px;
+        height: 105px;
+        background-size: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 30%;
+        -webkit-animation: myfirst 22s linear infinite;
+        animation: myfirst 22s linear infinite;
+      }
+
+      .new_footer_top .footer_bg .footer_bg_two {
+        background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyLGwEUVwPK6Vi8xXMymsc-ZXVwLWyXhogZxbcXQYSY55REw_0D4VTQnsVzCrL7nsyjd0P7RVOI5NKJbQ75koZIalD8mqbMquP20fL3DxsWngKkOLOzoOf9sMuxlbyfkIBTsDw5WFUj-YJiI50yzgVjF8cZPHhEjkOP_PRTQXDHEq8AyWpBiJdN9SfQA/s16000/cyclist.gif")
+          no-repeat center center;
+        width: 88px;
+        height: 100px;
+        background-size: 100%;
+        bottom: 0;
+        left: 38%;
+        position: absolute;
+        -webkit-animation: myfirst 30s linear infinite;
+        animation: myfirst 30s linear infinite;
+      }
+
+      @-moz-keyframes myfirst {
+        0% {
+          left: -25%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      @-webkit-keyframes myfirst {
+        0% {
+          left: -25%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      @keyframes myfirst {
+        0% {
+          left: -25%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+      /* contact */
+      @import url(https://fonts.googleapis.com/css?family=Oswald:400,700);
+      @import url(https://fonts.googleapis.com/css?family=Open+Sans);
+
+      #contact {
+        width: 400px;
+        margin: 3em auto;
+        background: rgb(230, 242, 251);
+        position: relative;
+      }
+      #contact::after {
+        content: "";
+        display: block;
+        height: 30px;
+        width: 90%;
+        left: 5%;
+        bottom: 0;
+        position: absolute;
+        -webkit-box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.19);
+        box-shadow: 0 5px 15px 0 rgba(102, 160, 219, 0.19);
+        border-radius: 100%;
+        z-index: -1;
+      }
+      #contact article {
+        padding: 1.2em;
+      }
+      #contact h1 {
+        background: #8697c7;
+        font-family: Oswald, sans-serif;
+        font-size: 1.7em;
+        padding: 0.5em 0 0.6em 0.4em;
+        color: white;
+        text-shadow: 0 0.1em 0 #1d1313;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .contactbutton {
+        background: #8697c7;
+        -webkit-box-shadow: 1px 1px 0 0 #507faf, 2px 2px 0 0 #507faf,
+          3px 3px 0 0 #507faf;
+        box-shadow: 1px 1px 0 0 #507faf, 2px 2px 0 0 #507faf,
+          3px 3px 0 0 #507faf;
+        text-align: center;
+        display: block;
+        width: 100%;
+        height: 50px;
+        margin-top: 20px;
+        margin-bottom: 2px;
+        cursor: pointer;
+      }
+      .contactbutton:hover {
+        -webkit-box-shadow: 1px 1px 0 0 #507faf, 0px 0px 0 0 #507faf,
+          0px 0px 0 0 #507faf;
+        box-shadow: 1px 1px 0 0 #507faf, 0px 0px 0 0 #507faf,
+          0px 0px 0 0 #507faf;
+        margin-top: 22px;
+        margin-left: 2px;
+        margin-bottom: 0px;
+      }
+      .mail {
+        margin-top: 11px;
+        font-size: 15px;
+        display: inline-block;
+        border-top: 2em solid transparent;
+        border-left: 2.6em solid #3a6fcb;
+        height: 0;
+        width: 0;
+        position: relative;
+      }
+      .mail:before {
+        content: "";
+        top: -2.5em;
+        left: -2.95em;
+        display: block;
+        position: absolute;
+        border-top: 1.2em solid #3a6fcb;
+        border-left: 1.6em solid transparent;
+        border-right: 1.6em solid transparent;
+        border-bottom: 1em solid transparent;
+        font-size: 0.8em;
+      }
+      .mail::after {
+        display: block;
+        content: "";
+        position: absolute;
+        border-top: 2em solid transparent;
+        border-right: 2.6em solid #3a6fcb;
+        height: 0;
+        width: 0;
+        left: -2.18em;
+        bottom: 0;
+      }
+      #checkcontact {
+        position: absolute;
+        left: -9999px;
+      }
+      .contactform {
+        overflow: hidden;
+        max-height: 0px;
+        -webkit-transition: all linear 1s;
+        -moz-transition: all linear 1s;
+        -o-transition: all linear 1s;
+        -ms-transition: all linear 1s;
+        transition: all linear 1s;
+      }
+      #checkcontact:checked + .contactform {
+        max-height: 1000px;
+      }
+      .input_wrapper {
+        position: relative;
+      }
+      .textarea_wrapper textarea {
+        margin-top: 20px;
+        display: block;
+        width: 100%;
+        background: white;
+        border: 1px solid #dadada;
+        box-shadow: 0 0 1px 0 #e4e4e4;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 1em;
+        -webkit-transition: all 250ms ease;
+        -moz-transition: all 250ms ease;
+        -ms-transition: all 250ms ease;
+        -o-transition: all 250ms ease;
+        transition: all 250ms ease;
+        color: #5e5e5e;
+      }
+      .input_wrapper input[type="text"] {
+        margin-top: 1em;
+        display: block;
+        width: 100%;
+        background: white;
+        border: 1px solid #dadada;
+        box-shadow: 0 0 1px 0 #e4e4e4;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 1em;
+        -webkit-transition: all 250ms ease;
+        -moz-transition: all 250ms ease;
+        -ms-transition: all 250ms ease;
+        -o-transition: all 250ms ease;
+        transition: all 250ms ease;
+        color: #5e5e5e;
+        text-indent: 15%;
+      }
+      .input_wrapper input[type="text"]:focus {
+        background: rgba(242, 56, 90, 0.05);
+        box-shadow: inset 2px 2px 5px 0 #dadada;
+        outline: none;
+        text-indent: 0;
+      }
+      .input_wrapper label {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        background: #7997b6;
+        color: white;
+        font-family: Oswald, sans-serif;
+        box-sizing: border-box;
+        width: 25%;
+        text-align: center;
+        line-height: 2.8em;
+        -webkit-transition: all 250ms ease;
+        -moz-transition: all 250ms ease;
+        -ms-transition: all 250ms ease;
+        -o-transition: all 250ms ease;
+        transition: all 250ms ease;
+      }
+      .input_wrapper input[type="text"]:focus + label {
+        left: 85%;
+      }
+      .textarea_wrapper textarea {
+        margin-top: 20px;
+        display: block;
+        width: 100%;
+        min-height: 150px;
+        background: white;
+        border: 1px solid #dadada;
+        box-shadow: 0 0 1px 0 #e4e4e4;
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        padding: 1em;
+        -webkit-transition: all 250ms ease;
+        -moz-transition: all 250ms ease;
+        -ms-transition: all 250ms ease;
+        -o-transition: all 250ms ease;
+        transition: all 250ms ease;
+        color: #6621ab;
+      }
+      .textarea_wrapper textarea:focus {
+        background: rgba(242, 56, 90, 0.05);
+        box-shadow: inset 2px 2px 5px 0 #dadada;
+        outline: none;
+      }
+      .submit_wrapper {
+        text-align: center;
+      }
+      .submit_wrapper input {
+        text-align: center;
+        display: inline-block;
+        width: 30%;
+        height: 40px;
+        margin-top: 1em;
+        margin-bottom: 6px;
+        cursor: pointer;
+        background: #62869a;
+        color: white;
+        font-family: Oswald, sans-serif;
+        font-size: 1em;
+        border: none;
+        -webkit-box-shadow: 1px 1px 0 0 #507faf, 2px 2px 0 0 #507faf,
+          3px 3px 0 0 #507faf;
+        box-shadow: 1px 1px 0 0 #507faf, 2px 2px 0 0 #507faf,
+          3px 3px 0 0 #507faf;
+        -webkit-transition: all 250ms ease;
+        -moz-transition: all 250ms ease;
+        -ms-transition: all 250ms ease;
+        -o-transition: all 250ms ease;
+        transition: all 250ms ease;
+      }
+      .submit_wrapper input:hover {
+        -webkit-box-shadow: 1px 1px 0 0 #507faf, 0px 0px 0 0 #507faf,
+          0px 0px 0 0 #507faf;
+        box-shadow: 1px 1px 0 0 #507faf, 0px 0px 0 0 #507faf,
+          0px 0px 0 0 #507faf;
+        margin-top: 22px;
+        margin-left: 2px;
+        margin-bottom: 0px;
+      }
+
+      @media (max-width: 500px) {
+        #contact {
+          width: 100%;
+        }
+        .input_wrapper label {
+          line-height: 3.5em;
+          font-size: 0.8em;
+        }
+      }
+    </style>
+
+    <title>Contact</title>
+  </head>
+  <div class="nav">
+    <ul>
+      <li><a href="contact.html">Contact me</a></li>
+      <li><a href="skill.html">Interest and Skills</a></li>
+      <!-- <li><a href="education.html">Education</a></li> -->
+      <li><a href="project.html">Projects</a></li>
+      <li><a href="About.html">About me</a></li>
+      <li><a href="home.html">Home</a></li>
+    </ul>
+  </div>
+  <body>
+    <div class="hero about">
+      <div class="content">
+        <h1 style="font-size: 90px">Contact Me</h1>
+        <h2 style="font-size: 25px">
+          Feel free to reach out to discuss collaboration opportunities or
+          technology-related inquiries—I'm eager to connect and contribute!
+        </h2>
+      </div>
+    </div>
+    <div class="Cont">
+      <section id="contact">
+        <div class="sectionheader"><h1>CONTACT</h1></div>
+        <article>
+          <p>
+            Let's stay connected.Drop me a line and let's explore the
+            possibilities together!
+          </p>
+
+          <label for="checkcontact" class="contactbutton"
+            ><div class="mail"></div></label
+          ><input id="checkcontact" type="checkbox" />
+
+          <form action="" method="post" class="contactform">
+            <p class="input_wrapper">
+              <input
+                type="text"
+                name="contact_nom"
+                value=""
+                id="contact_nom"
+              /><label for="contact_nom">NAME</label>
+            </p>
+            <p class="input_wrapper">
+              <input
+                type="text"
+                name="contact_email"
+                value=""
+                id="contact_email"
+              /><label for="contact_email">EMAIL</label>
+            </p>
+            <p class="input_wrapper">
+              <input
+                type="text"
+                name="contact_sujet"
+                value=""
+                id="contact_sujet"
+              /><label for="contact_sujet">SUBJECT</label>
+            </p>
+            <p class="textarea_wrapper">
+              <textarea name="contact_message" id="contact_message"></textarea>
+            </p>
+            <p class="submit_wrapper">
+              <input type="submit" value="SEND" />
+            </p>
+          </form>
+        </article>
+      </section>
+    </div>
+    <footer class="new_footer_area bg_color">
+      <div class="socialmedia-container">
+        <div class="socialmedia">
+          <br />
+          <div align="center" class="socialbtns">
+            <ul>
+              <li><a href="#" class="fa fa-lg fa-facebook"></a></li>
+              <li><a href="#" class="fa fa-lg fa-twitter"></a></li>
+              <li><a href="#" class="fa fa-lg fa-google-plus"></a></li>
+              <li><a href="#" class="fa fa-lg fa-github"></a></li>
+              <li><a href="#" class="fa fa-lg fa-linkedin"></a></li>
+              <li><a href="#" class="fa fa-lg fa-instagram"></a></li>
+              <li><a href="#" class="fa fa-lg fa-youtube"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="new_footer_top">
+        <div class="footer_bg">
+          <div class="footer_bg_one"></div>
+          <div class="footer_bg_two"></div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

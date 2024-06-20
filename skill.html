@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "poppins", sans-serif;
+      }
+
+      .hero {
+        width: 100%;
+        height: 100vh;
+        background-image: linear-gradient(
+            rgba(12, 3, 51, 0.3),
+            rgba(12, 3, 51, 0.3)
+          ),
+          url("image/sk.jpg");
+        background-size: cover; /* Ensure the background image covers the entire section */
+        background-position: center; /* Center the background image */
+        position: relative;
+        padding: 0 5%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .content {
+        text-align: center;
+      }
+
+      .content h1 {
+        font-size: 6vw;
+        color: #fff;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .content h2 {
+        font-size: 2vw;
+        color: #fff;
+        font-weight: 600;
+        transition: 0.3s;
+      }
+
+      .content h1:hover {
+        -webkit-text-stroke: 1px #fff;
+        color: transparent;
+      }
+
+      /* style for navbar */
+      .nav {
+        background-color: none;
+        overflow: hidden;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        text-align: center;
+        /* Center the content horizontally */
+        z-index: 1000;
+        /* Ensure the navbar appears above other elements */
+      }
+
+      .nav ul {
+        margin: 0 auto;
+        /* Center the list horizontally */
+        padding: 0;
+        list-style-type: none;
+        display: inline-block;
+        /* Ensure the list items stay in a single line */
+      }
+
+      .nav li {
+        float: right;
+      }
+
+      .nav li a {
+        display: block;
+        color: blanchedalmond;
+        /* Text color */
+        text-align: center;
+        padding: 52px 16px;
+        text-decoration: none;
+        font-size: 20px;
+
+        /* Font size */
+        font-family: "poppins", sans-serif;
+        /* Font family */
+        /* font-weight: bold; */
+      }
+
+      .nav li a:hover {
+        color: rgba(181, 197, 240, 0.836);
+        cursor: pointer;
+        transform: scale(1.1);
+      }
+
+      /* explore cart */
+      .garden-card h3 {
+        color: darkgreen;
+        font-size: 24px;
+      }
+
+      .garden-card p {
+        color: #333;
+        font-size: 16px;
+      }
+
+      .center-container {
+        display: flex;
+        flex-wrap: wrap;
+        /* Allow cards to wrap to the next line if there's not enough space */
+        justify-content: space-around;
+        /* Adjust as needed */
+        align-items: center;
+        text-align: center;
+        width: 100%;
+      }
+
+      .garden-card {
+        background-color: #ffffff;
+        border: 1px solid #ddd;
+        border-radius: 15px;
+        padding: 20px;
+        margin: 30px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        width: 18%;
+        /* 25% width for four cards in a row with margin between them */
+        text-align: center;
+        height: 48vh;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      /* Set a media query to adjust the width for smaller screens if needed */
+      @media screen and (max-width: 768px) {
+        .garden-card {
+          width: calc(50% - 20px);
+          /* 50% width for two cards in a row on smaller screens */
+        }
+      }
+
+      .row {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      .garden-types {
+        width: 100%;
+      }
+      .garden-card:hover {
+        background-color: #f0f0f0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        transform: scale(1.05);
+      }
+      .garden-card img {
+        max-width: 100%;
+        height: auto;
+        /* This ensures the image doesn't exceed the width of the card and maintains its aspect ratio */
+        display: block;
+        margin: 0 auto;
+        /* Center the image horizontally within the card */
+      }
+
+      /* advices */
+
+      .advices {
+        display: flex;
+        justify-content: center;
+        margin: 20px;
+      }
+
+      .card {
+        width: 350px;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        overflow: hidden;
+        margin: 40px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        transition: transform 0.3s ease-in-out;
+      }
+
+      .card:hover {
+        transform: scale(1.05);
+        background-color: #f0f0f0;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      }
+
+      .card img {
+        width: 100px;
+        height: 100%;
+        margin-top: 0;
+        /* Remove the gap at the top */
+      }
+
+      .card .content {
+        padding: 16px;
+      }
+
+      .card h2 {
+        margin-top: 0;
+        color: #333;
+      }
+
+      .card p {
+        color: #666;
+      }
+
+      /* social media */
+      @import url("//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css");
+
+      a,
+      a:hover {
+        text-decoration: none;
+      }
+
+      .socialbtns,
+      .socialbtns ul,
+      .socialbtns li {
+        margin: 0;
+        padding: 5px;
+      }
+
+      .socialbtns li {
+        list-style: none outside none;
+        display: inline-block;
+      }
+
+      .socialbtns .fa {
+        width: 40px;
+        height: 40px;
+        color: #3341c8;
+        background-color: whitesmoke;
+        /* border: 1px solid #000; */
+        padding-top: 12px;
+        border-radius: 22px;
+        -moz-border-radius: 22px;
+        -webkit-border-radius: 22px;
+        -o-border-radius: 22px;
+      }
+
+      .socialbtns .fa:hover {
+        color: #ffffff;
+        background-color: #000;
+        border: 1px solid #000;
+      }
+      /* footer */
+      .new_footer_area {
+        background: #fbfbfd;
+      }
+
+      .new_footer_top {
+        padding: 100px 0px 100px;
+        position: relative;
+        overflow-x: hidden;
+      }
+
+      .new_footer_top .footer_bg {
+        position: absolute;
+        bottom: 0;
+        background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEigB8iI5tb8WSVBuVUGc9UjjB8O0708X7Fdic_4O1LT4CmLHoiwhanLXiRhe82yw0R7LgACQ2IhZaTY0hhmGi0gYp_Ynb49CVzfmXtYHUVKgXXpWvJ_oYT8cB4vzsnJLe3iCwuzj-w6PeYq_JaHmy_CoGoa6nw0FBo-2xLdOPvsLTh_fmYH2xhkaZ-OGQ/s16000/footer_bg.png")
+          no-repeat scroll center 0;
+        width: 100%;
+        height: 266px;
+      }
+
+      .new_footer_top .footer_bg .footer_bg_one {
+        background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEia0PYPxwT5ifToyP3SNZeQWfJEWrUENYA5IXM6sN5vLwAKvaJS1pQVu8mOFFUa_ET4JuHNTFAxKURFerJYHDUWXLXl1vDofYXuij45JZelYOjEFoCOn7E6Vxu0fwV7ACPzArcno1rYuVxGB7JY6G7__e4_KZW4lTYIaHSLVaVLzklZBLZnQw047oq5-Q/s16000/volks.gif")
+          no-repeat center center;
+        width: 330px;
+        height: 105px;
+        background-size: 100%;
+        position: absolute;
+        bottom: 0;
+        left: 30%;
+        -webkit-animation: myfirst 22s linear infinite;
+        animation: myfirst 22s linear infinite;
+      }
+
+      .new_footer_top .footer_bg .footer_bg_two {
+        background: url("https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhyLGwEUVwPK6Vi8xXMymsc-ZXVwLWyXhogZxbcXQYSY55REw_0D4VTQnsVzCrL7nsyjd0P7RVOI5NKJbQ75koZIalD8mqbMquP20fL3DxsWngKkOLOzoOf9sMuxlbyfkIBTsDw5WFUj-YJiI50yzgVjF8cZPHhEjkOP_PRTQXDHEq8AyWpBiJdN9SfQA/s16000/cyclist.gif")
+          no-repeat center center;
+        width: 88px;
+        height: 100px;
+        background-size: 100%;
+        bottom: 0;
+        left: 38%;
+        position: absolute;
+        -webkit-animation: myfirst 30s linear infinite;
+        animation: myfirst 30s linear infinite;
+      }
+
+      @-moz-keyframes myfirst {
+        0% {
+          left: -25%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      @-webkit-keyframes myfirst {
+        0% {
+          left: -25%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+
+      @keyframes myfirst {
+        0% {
+          left: -25%;
+        }
+        100% {
+          left: 100%;
+        }
+      }
+    </style>
+
+    <title>Skills</title>
+  </head>
+  <body>
+    <div class="nav">
+      <ul>
+        <li><a href="contact.html">Contact me</a></li>
+        <li><a href="skill.html">Interest and Skills</a></li>
+        <!-- <li><a href="education.html">Education</a></li> -->
+        <li><a href="project.html">Projects</a></li>
+        <li><a href="About.html">About me</a></li>
+        <li><a href="home.html">Home</a></li>
+      </ul>
+    </div>
+
+    <div class="hero about">
+      <div class="content">
+        <h1 style="font-size: 90px">Interests and Skills</h1>
+      </div>
+    </div>
+    <!-- Inside the "garden-types" section -->
+    <div class="garden-types">
+      <div class="center-container">
+        <h2
+          style="
+            color: darkgreen;
+            font-size: 30px;
+            font-weight: bold;
+            margin-top: 150px;
+            margin-bottom: 30px;
+          "
+        >
+          Skills
+        </h2>
+      </div>
+
+      <!-- First Row -->
+      <div class="row">
+        <!-- Card: Modern Garden -->
+        <div class="garden-card">
+          <h3 style="padding-bottom: 30px">Machine Learning</h3>
+          <img src="image/ML.jpg" alt="Image" />
+          <p style="padding-top: 20px">
+            Machine Learning (ML) is a branch of artificial intelligence that
+            improve their performance without explicit programming.
+          </p>
+          <!-- Add more details or images as needed -->
+        </div>
+
+        <!-- Card: City Garden -->
+        <div class="garden-card">
+          <h3 style="padding-bottom: 10px">Artificial Intelligence</h3>
+          <img src="image/ai.jpg" alt="Image" />
+          <p style="padding-top: 20px">
+            AI and ML are cutting-edge technologies enabling computers learning
+            from data to make autonomous decisions.
+          </p>
+          <!-- Add more details or images as needed -->
+        </div>
+
+        <!-- Card: Traditional Garden -->
+        <div class="garden-card">
+          <h3 style="padding-bottom: 30px">Web Development</h3>
+          <img src="image/web.jpg" alt="Image" />
+          <p style="padding-top: 20px">
+            Web development entails creating and managing websites or web
+            applications.
+          </p>
+          <!-- Add more details or images as needed -->
+        </div>
+      </div>
+
+      <!-- Second Row -->
+      <div class="row">
+        <!-- Card: Fifth Garden Type -->
+        <div class="garden-card">
+          <h3 style="padding-bottom: 30px">Programming Languages</h3>
+          <img src="image/prg.jpg" alt="Image" />
+          <p style="padding-top: 30px">Python,Java,C++,HTML,CSS</p>
+          <!-- Add more details or images as needed -->
+        </div>
+
+        <!-- Card: Sixth Garden Type -->
+        <div class="garden-card">
+          <h3 style="padding-bottom: 30px">Data Analyst</h3>
+          <img src="image/ana.jpg" alt="Image" />
+          <p style="padding-top: 30px">
+            Data analysts extract insights from data using statistical methods
+            and visualization tools.
+          </p>
+          <!-- Add more details or images as needed -->
+        </div>
+
+        <!-- Card: Seventh Garden Type -->
+        <div class="garden-card">
+          <h3 style="padding-bottom: 30px">Research</h3>
+          <img src="image/res.jpg" alt="Image" />
+          <p style="padding-top: 30px">
+            Technology researchers explore new ideas and methodologies to
+            advance the field's knowledge.
+          </p>
+          <!-- Add more details or images as needed -->
+        </div>
+      </div>
+    </div>
+
+    <!-- advices-->
+    <div class="garden-advices">
+      <h1
+        style="
+          color: darkgreen;
+          font-size: 30px;
+          font-weight: bold;
+          margin-top: 120px;
+          margin-bottom: 30px;
+          text-align: center;
+        "
+      >
+        Interest
+      </h1>
+
+      <p
+        style="
+          text-align: center;
+          color: #666;
+          font-size: 18px;
+          margin-bottom: 20px;
+        "
+      >
+        I am passionate about technology and enjoy creating innovative ideas.
+      </p>
+
+      <div class="advices">
+        <div class="card">
+          <img src="image/dd.jpg" alt="interest 1" />
+          <div class="content">
+            <h2 style="font-size: 24px">Data Science</h2>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="image/iot.jpg" alt="interest 2" />
+          <div class="content">
+            <h2 style="font-size: 24px">Internet of Things</h2>
+          </div>
+        </div>
+
+        <div class="card">
+          <img src="image/llead.jpg" alt="interest 3" />
+          <div class="content">
+            <h2 style="font-size: 24px">Leadership</h2>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <footer class="new_footer_area bg_color">
+      <div class="socialmedia-container">
+        <div class="socialmedia">
+          <br />
+          <div align="center" class="socialbtns">
+            <ul>
+              <li><a href="#" class="fa fa-lg fa-facebook"></a></li>
+              <li><a href="#" class="fa fa-lg fa-twitter"></a></li>
+              <li><a href="#" class="fa fa-lg fa-google-plus"></a></li>
+              <li><a href="#" class="fa fa-lg fa-github"></a></li>
+              <li><a href="#" class="fa fa-lg fa-linkedin"></a></li>
+              <li><a href="#" class="fa fa-lg fa-instagram"></a></li>
+              <li><a href="#" class="fa fa-lg fa-youtube"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="new_footer_top">
+        <div class="footer_bg">
+          <div class="footer_bg_one"></div>
+          <div class="footer_bg_two"></div>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
